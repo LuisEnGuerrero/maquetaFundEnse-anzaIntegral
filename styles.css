@@ -1,0 +1,280 @@
+/* Global Styles */
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem !important; /* Tamaño de letra más pequeño con !important */
+    color: #333;
+    text-align: center; /* Asegura que el texto esté alineado a la izquierda */
+    font-weight: 700; /* Hace que la letra sea negrita */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #00a0e4;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00a0e4;
+    padding: 1rem 3rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    background-color: white;
+    color: #00a0e4;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-inline: 2rem;
+}
+
+.cta-button:hover {
+    background-color: #00c1f2;
+}
+
+.position-sup{
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+
+/* Main Content */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+    top: 70px;
+    align-content: stretch;
+}
+
+.text-container {
+    width: 50%;
+    text-align: left;
+    padding-bottom: 13%;
+    position: relative;
+    z-index: 20;
+}
+
+h2 {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.buttons {
+    margin-top: 2rem;
+}
+
+.buttons a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: 2px solid #00a0e4;
+    color: #00a0e4;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.buttons a:hover {
+    background-color: #00a0e4;
+    color: white;
+}
+
+
+/* Image Section with Circle */
+.image-container {
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.image-container img {
+    width: 110%;
+    object-fit: cover; /* Asegura que la imagen ocupe todo el bloque */
+    padding-top: 34%;
+    object-position: bottom; /* Asegura que la imagen venga desde el borde inferior */
+    display: block;
+    position: relative;
+    z-index: 30;
+}
+
+.circle-background {
+    position: absolute;
+    top: -70px;
+    right: -38px;
+    width: 720px;
+    height: 720px;
+    background-color: #00a0e4;
+    border-top-left-radius: 350px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 350px;
+    border-bottom-left-radius: 350px;
+    z-index: 1;
+    max-width: 100%; /* Asegura que el círculo no exceda el 100% del ancho */
+    max-height: 100%; /* Asegura que el círculo no exceda el 100% del alto */
+    overflow: hidden; /* Recorta el círculo si excede el contenedor */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .position-sup{
+        position: relative;
+        width: 100%;
+    }
+    
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem; /* Ajustado para mejor responsividad */
+        height: auto;
+    }
+
+    .text-container, .image-container {
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .image-container {
+        height: auto;
+    }
+
+    .image-container img {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .circle-background {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .buttons a {
+        padding: 0.5rem 1rem; /* Ajustado para mejor responsividad */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem; /* Ajustado para mejor responsividad */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Ocultar el menú por defecto en pantallas pequeñas */
+    }
+
+    nav ul.active {
+        display: flex; /* Mostrar el menú cuando se active */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Ajustado para mejor responsividad */
+    }
+
+    .container {
+        padding: 1rem; /* Ajustado para mejor responsividad */
+    }
+
+    h1 {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .buttons a {
+        padding: 0.5rem 1rem; /* Ajustado para mejor responsividad */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        padding: 0.5rem; /* Ajustado para mejor responsividad */
+    }
+
+    .container {
+        padding: 1rem; /* Ajustado para mejor responsividad */
+    }
+
+    h1 {
+        font-size: 0.6rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .buttons a {
+        padding: 0.1rem 0.1rem; /* Ajustado para mejor responsividad */
+        width: 100%; /* Hace que los botones ocupen el 100% del ancho */
+        box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+        margin: 0.5rem 0; /* Añade un margen vertical entre los botones */
+    }
+}
